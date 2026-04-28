@@ -24,11 +24,9 @@
 		to_chat(user, span_warning("[I] must be in your hand to do that."))
 		return
 	var/obj/item/cell/our_cell = I
-	// RU TGMC EDIT ADDITION BEGIN (te_powerback)
 	if(!our_cell.rechargable)
 		balloon_alert(user, "Not rechargeable")
 		return
-	// RU TGMC EDIT ADDITION END
 	var/charge_difference = our_cell.maxcharge - our_cell.charge
 	if(charge_difference)
 		var/charge_used = use_charge(user, charge_difference)
